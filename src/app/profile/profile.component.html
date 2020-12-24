@@ -1,1 +1,51 @@
-<p>profile works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="profileForm">
+      <div class="row">
+        <div class="col-xs-12" formArrayName="kids">
+          <div class="col-xs-5">
+            <label for="name">Name</label>
+          </div>
+          <div class="col-xs-3">
+            <label for="sex">Sex</label>
+          </div>
+          <div class="col-xs-2">
+            <label for="age">age</label>
+          </div>
+          <div class="row"
+          *ngFor="let kidCtrl of controls; let i = index"
+          [formGroupName]=i
+          style="margin-top: 10px;">
+            <div class="container">
+              <div class="col-xs-12">
+                Kid {{ i + 1 }}
+              </div>
+            </div>
+            <div class="col-xs-5">
+              <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="col-xs-3">
+              <select name="sex" id="sex" class="form-control" formControlName="sex">
+                <option value="female">female</option>
+                <option value="male">male</option>
+              </select>
+            </div>
+            <div class="col-xs-2">
+              <input type="number" class="form-control" formControlName="age">
+            </div>
+            <div class="col-xs-2">
+              <div type="button" class="btn btn-danger">x</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button class="btn btn-success" type="button"
+              style="margin-top: 10px;"
+              (click)="onAddKid()">Add Kid</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
