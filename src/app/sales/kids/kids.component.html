@@ -1,1 +1,9 @@
-<p>kids works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <app-each-kid
+    *ngFor="let kid of profile; let i = index"
+    [kid]="kid"
+    [index]="i"
+    ></app-each-kid>
+  </div>
+</div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { KidProfile } from 'src/app/profile/kid-profile.model';
 
 @Component({
   selector: 'app-each-kid',
@@ -6,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./each-kid.component.css']
 })
 export class EachKidComponent implements OnInit {
+  @Input() kid: KidProfile;
 
+  @Input() index: number;
   constructor() { }
 
   ngOnInit(): void {

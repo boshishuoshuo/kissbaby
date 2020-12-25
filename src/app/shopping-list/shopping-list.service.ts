@@ -6,9 +6,9 @@ import { ShoppingItem } from "./shopping-item.model";
 })
 export class ShoppingListService {
   private shoppingList: ShoppingItem[] = [
-    new ShoppingItem('T-shirt', 2),
-    new ShoppingItem('Shoes', 1),
-    new ShoppingItem('Pants', 1)
+    new ShoppingItem('T-shirt', 2, 'female', 3),
+    new ShoppingItem('Shoes', 1, 'male', 4),
+    new ShoppingItem('Pants', 1, 'female', 5)
   ];
 
   getShoppingList() {

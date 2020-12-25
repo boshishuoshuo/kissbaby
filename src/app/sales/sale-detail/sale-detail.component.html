@@ -1,1 +1,9 @@
-<p>sale-detail works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="list-group-item"
+    *ngFor="let recom of recommendations">
+      <h4 class="list-group-item-heading">{{ recom.name }}</h4>
+      <p class="list-group-item-text">{{ recom.sex }} @ {{ recom.age }}</p>
+    </div>
+  </div>
+</div>

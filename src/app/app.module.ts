@@ -12,6 +12,7 @@ import { KidsComponent } from './sales/kids/kids.component';
 import { EachKidComponent } from './sales/kids/each-kid/each-kid.component';
 import { SaleDetailComponent } from './sales/sale-detail/sale-detail.component';
 import { HomeComponent } from './home/home.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     KidsComponent,
     EachKidComponent,
     SaleDetailComponent,
-    HomeComponent
+    HomeComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
