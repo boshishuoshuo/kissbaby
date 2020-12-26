@@ -19,4 +19,8 @@ export class SaleDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAddToShoppingList() {
+
+  }
+
 }

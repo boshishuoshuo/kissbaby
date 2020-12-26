@@ -1,9 +1,12 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div class="list-group-item"
-    *ngFor="let recom of recommendations">
+<div class="row" *ngFor="let recom of recommendations" style="margin-top: 10px;">
+  <div class="panel panel-default" style="margin-top: 10px;">
+    <div class="col-xs-7" style="margin-top: 10px;">
       <h4 class="list-group-item-heading">{{ recom.name }}</h4>
       <p class="list-group-item-text">{{ recom.sex }} @ {{ recom.age }}</p>
     </div>
+    <div class="col-xs-5 " style="margin-top: 10px;">
+      <button class="btn btn-primary pull-right" type="button">Buy it</button>
+    </div>
   </div>
+
 </div>

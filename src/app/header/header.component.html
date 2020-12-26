@@ -20,13 +20,16 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuth">
           <a routerLink="/profile">Profile</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuth">
+          <a (click)="onLogout()">Logout</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuth">
           <a routerLink="/auth">Login</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="!isAuth">
           <a routerLink="/auth">Sign Up</a>
         </li>
       </ul>

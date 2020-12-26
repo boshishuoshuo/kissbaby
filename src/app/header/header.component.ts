@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
   collapsed = false;
-  constructor() { }
+  isAuth: Boolean;
+
+  private isLogin: Subscription;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.isLogin = this.authService.isLogin.subscribe( isAuthorized =>
+      {this.isAuth = isAuthorized;
+        console.log(this.isAuth) });
+    console.log(this.isAuth);
+  }
+
+  onLogout() {
+    this.isAuth = false;
   }
 
 }
