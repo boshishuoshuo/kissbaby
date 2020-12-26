@@ -57,4 +57,12 @@ export class ProfileComponent implements OnInit {
     )
   }
 
+  onDeleteKid(index: number) {
+    (<FormArray>this.profileForm.get('kids')).removeAt(index);
+  }
+
+  onSubmit() {
+    this.profileService.updateProfile(this.profileForm.value.kids);
+    // console.log(this.profileForm.value)
+  }
 }
