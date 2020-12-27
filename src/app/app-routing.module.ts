@@ -9,10 +9,10 @@ import { SalesComponent } from './sales/sales.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
   { path: 'sales', component: SalesComponent, canActivate: [AuthGuard]},
-  { path: 'shopping-list', component: ShoppingListComponent},
+  { path: 'shopping-list', component: ShoppingListComponent, canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   { path: 'auth', component: AuthComponent}
 ];

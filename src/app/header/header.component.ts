@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { AuthService } from '../auth/auth.service';
@@ -25,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogout() {
-    this.isAuth = false;
+    this.authService.logout();
   }
 
 }

@@ -9,11 +9,15 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
-  shoppingList: ShoppingItem[];
+  shoppingList: {'shoppingItem': ShoppingItem, 'amount': number}[];
 
   constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {
+    this.shoppingListService.shoppingListChanged.subscribe((
+      shoppingList: {'shoppingItem': ShoppingItem, 'amount': number}[]) => {
+        this.shoppingList = shoppingList
+    });
     this.shoppingList = this.shoppingListService.getShoppingList();
   }
 
