@@ -24,7 +24,7 @@ export class AuthComponent implements OnInit {
     // console.log(form.value.email);
     // console.log(form.value.password);
     if (this.isAuth) {
-      this.router.navigate(['/sales']);
+      this.router.navigate(['/profile']);
     } else {
       this.errMessage = 'Please use test@test.com and test123 to login';
     }

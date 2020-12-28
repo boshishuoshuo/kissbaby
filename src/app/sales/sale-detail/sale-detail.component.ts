@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ShoppingItem } from 'src/app/shopping-list/shopping-item.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
@@ -12,10 +12,12 @@ export class SaleDetailComponent implements OnInit {
   recommendations: ShoppingItem[] = [
     new ShoppingItem('hat', 'femail', 3),
     new ShoppingItem('shirt', 'male', 5),
-    new ShoppingItem('pants', 'female', 4),
-    new ShoppingItem('socks', 'female', 6),
+    new ShoppingItem('pants', 'female', 3),
+    new ShoppingItem('socks', 'female', 5),
     new ShoppingItem('shoes', 'male', 7)
   ]
+
+  @Input() age: number;
   constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {

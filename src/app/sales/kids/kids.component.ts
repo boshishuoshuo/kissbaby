@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { KidProfile } from 'src/app/profile/kid-profile.model';
 import { ProfileService } from 'src/app/profile/profile.service';
@@ -12,6 +12,8 @@ export class KidsComponent implements OnInit {
   profile: KidProfile[];
   subscription: Subscription;
 
+  @Output() ageChosen = new EventEmitter<number>();
+
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
@@ -21,6 +23,11 @@ export class KidsComponent implements OnInit {
       }
     )
     this.profile = this.profileService.getProfile();
+  }
+
+  onAge(age: number) {
+    // console.log(age);
+    this.ageChosen.emit(age);
   }
 
 }

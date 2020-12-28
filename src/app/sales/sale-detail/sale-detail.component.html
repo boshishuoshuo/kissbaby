@@ -1,5 +1,6 @@
 <div class="row" *ngFor="let recom of recommendations" style="margin-top: 10px;">
-  <div class="panel panel-default" style="margin-top: 10px;">
+  <div class="panel panel-default" style="margin-top: 10px;"
+  *ngIf="recom.age === age">
     <div class="col-xs-7" style="margin-top: 10px;">
       <h4 class="list-group-item-heading">{{ recom.name }}</h4>
       <p class="list-group-item-text">{{ recom.sex }} @ {{ recom.age }}</p>

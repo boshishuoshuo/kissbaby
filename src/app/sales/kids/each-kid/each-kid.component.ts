@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { EventEmitter, Component, Input, OnInit, Output } from '@angular/core';
 
 import { KidProfile } from 'src/app/profile/kid-profile.model';
 
@@ -9,11 +9,18 @@ import { KidProfile } from 'src/app/profile/kid-profile.model';
 })
 export class EachKidComponent implements OnInit {
   @Input() kid: KidProfile;
-
   @Input() index: number;
+
+  @Output() ageSelected = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelectKid() {
+    // console.log(this.kid);
+    // console.log(this.kid.age);
+    this.ageSelected.emit(this.kid.age);
   }
 
 }

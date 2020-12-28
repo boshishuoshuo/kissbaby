@@ -4,6 +4,7 @@
     *ngFor="let kid of profile; let i = index"
     [kid]="kid"
     [index]="i"
+    (ageSelected)="onAge($event)"
     ></app-each-kid>
   </div>
 </div>
